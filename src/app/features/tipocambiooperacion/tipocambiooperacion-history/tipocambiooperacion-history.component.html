@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Monto</th>
+                    <th>Mon. Origen</th>
+                    <th>Mon. Destino</th>
+                    <th>TC Usado</th>
+                    <th>Monto Obt.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tco of tcoHistorico">
+                    <td>{{tco.ejecucion | date: 'dd/MM/yyyy hh:mm:ss aaaaa\'m\'' }}</td>
+                    <td>{{tco.monto.toFixed(2) }}</td>
+                    <td>{{tco.monedaOrigen}}</td>
+                    <td>{{tco.monedaDestino}}</td>
+                    <td>{{tco.tipoCambioUsado.toFixed(3)}}</td>
+                    <td>{{tco.montoObtenido.toFixed(2)}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

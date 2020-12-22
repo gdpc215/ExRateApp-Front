@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="col-xs-12">
+		<app-tipocambio-item *ngFor="let tcItem of tcList, let i = index" [tc]="tcItem" [index]="i"></app-tipocambio-item>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-success" (click)="onNewTipoCambio()">Nuevo Tipo de Cambio</button>
+	</div>
+</div>

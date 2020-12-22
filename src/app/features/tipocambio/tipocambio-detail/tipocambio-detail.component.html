@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{tcItem.moneda}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <!--p><b>ID</b>: {{tcItem.id}} </p-->
+        <p><b>Codigo</b>: {{tcItem.moneda}} </p>
+        <p><b>Cambio (en S/.)</b>: {{(tcItem.cambio).toFixed(3)}} </p>
+        <p><b>Cambio (desde S/.)</b>: {{(1 / (+this.tcItem.cambio)).toFixed(3)}} </p>
+        <p><b>Fecha de Actualizacion</b>: {{tcItem.modificacion | date: 'dd/MM/yyyy hh:mm:ss aaaaa\'m\''}} </p>
+        <p><b>Origen</b>: {{tcItem.origen}} </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-primary" (click)="onEditRecipe()" >
+            Editar
+        </button>
+    </div>
+</div>
