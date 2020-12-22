@@ -4,6 +4,7 @@ import { TipoCambio } from 'src/app/shared/tipocambio.model';
 import { TipoCambioService } from '../../tipocambio/tipocambio.service';
 import { TipoCambioOperacionService } from '../tipocambiooperacion.service';
 import { TipoCambioOperacion } from 'src/app/shared/tipocambiooperacion.model';
+import { TipoCambioSolicitud } from 'src/app/shared/tipocambiosolicitud.model';
 
 @Component({
   selector: 'app-tipocambiooperacion-form',
@@ -37,14 +38,10 @@ export class TipoCambioOperacionFormComponent implements OnInit {
 
   onSubmit() {
     this.tcoOperacion = null;
-    const tcoItem = new TipoCambioOperacion(
-      0,
+    const tcoItem = new TipoCambioSolicitud(
       this.tcoForm.value.monto,
-      0,
       this.tcoForm.value.monedaOrigen,
-      this.tcoForm.value.monedaDestino,
-      0,
-      new Date()
+      this.tcoForm.value.monedaDestino
     );
     this.tcoService
       .addTipoCambioOperacion(tcoItem)

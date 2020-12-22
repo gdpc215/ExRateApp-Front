@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { TipoCambioOperacion } from '../../shared/tipocambiooperacion.model';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { tap } from 'rxjs/operators';
+import { TipoCambioSolicitud } from 'src/app/shared/tipocambiosolicitud.model';
 
 @Injectable({
     providedIn: 'root'
@@ -39,10 +40,7 @@ export class TipoCambioOperacionService {
         return this.tcoList[id];
     }
 
-    addTipoCambioOperacion(tco: TipoCambioOperacion) {
-        this.tcoList.push(tco);
-        this.tcoChanged.next(this.tcoList.slice());
-
+    addTipoCambioOperacion(tco: TipoCambioSolicitud) {
         return this.dsService
             .dsAddTipoCambioOperacion(tco);
     }

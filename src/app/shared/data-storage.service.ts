@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { TipoCambio } from './tipocambio.model';
 import { map } from 'rxjs/operators';
 import { TipoCambioOperacion } from './tipocambiooperacion.model';
+import { TipoCambioSolicitud } from './tipocambiosolicitud.model';
 
 @Injectable({
   providedIn: 'root'
@@ -65,11 +66,11 @@ export class DataStorageService {
       );
   }
 
-  dsAddTipoCambioOperacion(tipoCambioOperacion: TipoCambioOperacion) {
+  dsAddTipoCambioOperacion(tipoCambioSolicitud: TipoCambioSolicitud) {
     const endPoint = 'operacion/cambio';
 
     return this.httpClient
-      .post<TipoCambioOperacion>(this.apiBaseRoute + endPoint, tipoCambioOperacion);
+      .post<TipoCambioOperacion>(this.apiBaseRoute + endPoint, tipoCambioSolicitud);
   }
 }
 
